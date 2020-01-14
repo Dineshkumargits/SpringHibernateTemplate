@@ -41,6 +41,15 @@ public class EditEmployeeController {
 		return "redirect:/";
 	}
 
+	//	this is to be rest api. Getting error here...
+	@RequestMapping(value = "/reactEmployee", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	public String addEmployeereact(EmployeeEntity employeeEntity)
+	{
+		System.out.println(employeeEntity);
+		employeeManager.addEmployee(employeeEntity);
+		return "redirect:/";
+	}
+	
 	public void setEmployeeManager(EmployeeManager employeeManager) {
 		this.employeeManager = employeeManager;
 	}
